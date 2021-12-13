@@ -14,11 +14,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, 'client/docs')))
-app.get("*", (req, res) => {
-    let dir = __dirname.replace('/server/', '/')
-    res.sendFile(path.join(dir, "client", "docs","index.html"))
-})
+// app.use(express.static(path.join(__dirname, 'client/docs')))
+// app.get("*", (req, res) => {
+//     let dir = __dirname.replace('/server/', '/')
+//     res.sendFile(path.join(dir, "client", "docs","index.html"))
+// })
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
